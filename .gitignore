@@ -1,2 +1,2 @@
 # ignoring database
-tasks.db
+db/tasks.db

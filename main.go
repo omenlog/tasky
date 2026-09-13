@@ -15,7 +15,7 @@ func main() {
 	}
 	defer store.Close()
 
-	p := tea.NewProgram(model{store: store})
+	p := tea.NewProgram(newModel(store))
 
 	if _, err := p.Run(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error running program: %v\n", err)
