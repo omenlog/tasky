@@ -20,7 +20,10 @@ On first run, the application creates its SQLite database at `db/tasks.db`.
 | --- | --- |
 | `n` | Create a task |
 | `Enter` | Save a new task |
-| `Esc` | Cancel task creation |
+| `Esc` | Cancel task creation or deletion |
+| `d` | Delete the selected task |
+| `y` | Confirm task deletion |
+| `n` | Cancel task deletion |
 | `q` | Quit from the task list |
 | `Ctrl+C` | Quit |
 

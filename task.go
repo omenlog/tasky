@@ -70,3 +70,21 @@ func (s *TaskStore) ToggleTask(id int64) error {
 
 	return nil
 }
+
+func (s *TaskStore) DeleteTask(id int64) error {
+	result, err := s.db.Exec("DELETE FROM tasks WHERE ID = ?", id)
+	if err != nil {
+		return fmt.Errorf("Error deleting task with id %d %w", id, err)
+	}
+
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return fmt.Errorf("Error deleting task %w", err)
+	}
+
+	if rowsAffected == 0 {
+		return fmt.Errorf("Task with id %d doesn't exist", id)
+	}
+
+	return nil
+}
